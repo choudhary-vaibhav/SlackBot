@@ -1,5 +1,5 @@
 const { App } = require("@slack/bolt");
-const { greet } = require("../controllers/greetController");
+const { greet, joke } = require("../controllers/greetController");
 const { createTodo, addTask, getTasks, deleteTask } = require("../controllers/todoController");
 
 require('dotenv').config();
@@ -15,6 +15,7 @@ const appSlack = new App({
 
 //routing
 appSlack.command('/greet', greet);
+appSlack.command('/joke', joke);
 appSlack.command('/create-todo', createTodo);
 appSlack.command('/add-task', addTask);
 appSlack.command('/get-tasks', getTasks);
