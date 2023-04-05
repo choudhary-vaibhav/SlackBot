@@ -21,4 +21,14 @@ appSlack.command('/add-task', addTask);
 appSlack.command('/get-tasks', getTasks);
 appSlack.command('/delete-task', deleteTask);
 
+//events
+appSlack.event("member_joined_channel", async ({ command, say }) => {
+    try {
+      say("Welcome to the Channel!");
+    } catch (error) {
+        console.log("err")
+      console.error(error);
+    }
+});
+
 appSlack.start(port);
